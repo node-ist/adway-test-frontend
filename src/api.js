@@ -1,24 +1,24 @@
 import axios from 'axios'
 
-const baseUrl = ''
+const baseUrl = 'http://localhost:8888'
 
-export function getJobDescriptionApi(dispatch, type_success, type_fail) {
-  return axios.get(baseUrl).then(res =>
+export async function getJobDescriptionApi(dispatch, type_success, type_fail) {
+  try {
+    const response = await axios.get(`${baseUrl}/jobs`)
     dispatch({
       type: type_success,
-      payload: res.data,
+      payload: response.data.data[0],
     })
-  ).catch(dispatch({
+  } catch(error) {
+    dispatch({
       type: type_fail,
-      payload: 'Error',
+      payload: error,
     })
-  )
+  }
 }
 
-export function sendForm(values) {
-  axios.post(baseUrl, { data: values })
-    .then(() => {
-      this.props.history.push('/confirmation')
-    })
-    .catch()
+export async function sendForm(values) {
+  const response = await axios.post(`${baseUrl}/users/profile`, values)
+
+  return response.data
 }

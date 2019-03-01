@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { Formik, Form, Field } from 'formik'
@@ -22,9 +23,10 @@ const SignupSchema = Yup.object().shape({
     .required('Required'),
 })
 
-const ApplyForm = () => {
-  const handleSubmit = (values) => {
-    sendForm(values)
+const ApplyForm = ({history}) => {
+  const handleSubmit = async (values) => {
+    await sendForm(values)
+    history.push('/confirmation')
   }
 
   const getInputClasses = (errors, touched, field) => (
