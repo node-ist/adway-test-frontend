@@ -1,0 +1,88 @@
+.description {
+  &-title {
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    &__small {
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+  &-text {
+    font-size: 18px;
+    margin: 15px 0 0;
+  }
+  &-link {
+    display: inline-block;
+    margin: 15px 0 0;
+    color: #eeeeee;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  &-general {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    max-width: 100%;
+    margin: 20px auto 0;
+    text-align: center;
+    padding-bottom: 30px;
+    &:after {
+      position: absolute;
+      content: '';
+      width: 150px;
+      height: 2px;
+      background: #ffffff;
+      opacity: .5;
+      bottom: 0;
+      left: 50%;
+      margin-left: -75px;
+    }
+    &__text {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+  &-about {
+    margin-top: 30px;
+  }
+  &-benefits {
+    margin-top: 40px;
+    align-self: flex-start;
+  }
+  &-list {
+    padding: 0;
+    list-style-type: none;
+    &__item {
+      position: relative;
+      font-size: 18px;
+      padding: 10px 0 10px 25px;
+      &:before {
+        position: absolute;
+        content: '';
+        width: 15px;
+        height: 2px;
+        background: #ffffff;
+        left: 0;
+        top: 20px;
+      }
+    }
+  }
+  &-apply {
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    background: #D35560;
+    border-radius: 30px;
+    padding: 10px 60px;
+    transition: all .3s ease;
+    &:hover {
+      background: #D33D45;
+    }
+    &:active {
+      box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
