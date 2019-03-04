@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:8888'
+const baseUrl = process.env.REACT_APP_API_URL
 
 export async function getJobDescriptionApi(dispatch, type_success, type_fail) {
   try {

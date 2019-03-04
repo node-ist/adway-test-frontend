@@ -34,7 +34,6 @@ const ApplyForm = ({history}) => {
     ? 'form-input form-input__error'
     : 'form-input'
   )
-
   return (
     <div className="form">
       <div className="resize">
